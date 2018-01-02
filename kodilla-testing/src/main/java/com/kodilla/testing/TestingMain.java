@@ -15,19 +15,19 @@ public class TestingMain {
             System.out.println("Error!");
         }
 
-        Calculator calculator = new Calculator(5,2);
+        Calculator calculator = new Calculator(5, 2);
 
-        String result2 = add.getAdd();
+        int result2 = calculator.getAdd();
 
-        if (result.equals(7)) {
+        if (result2 == 7) {
             System.out.println("test OK");
         } else {
             System.out.println("Error!");
         }
 
-        String result3 = subtract.getSubtract();
+        int result3 = calculator.getSubtract();
 
-        if (result.equals(3)) {
+        if (result3 == 3) {
             System.out.println("test OK");
         } else {
             System.out.println("Error!");

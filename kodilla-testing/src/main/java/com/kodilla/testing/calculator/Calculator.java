@@ -3,21 +3,22 @@ package com.kodilla.testing.calculator;
 public class Calculator {
     int a;
     int b;
+    int add;
+    int subtract;
 
-
-    public Calculator(int a, int b){
+    public Calculator(int a, int b) {
         this.a = a;
         this.b = b;
+
+        this.add = a + b;
+        this.subtract = a - b;
     }
 
-    int add = a + b;
-    int subtract = a - b;
-
-    public int getAdd(){
+    public int getAdd() {
         return add;
     }
 
-    public int getSubtract(){
+    public int getSubtract() {
         return subtract;
     }
 
