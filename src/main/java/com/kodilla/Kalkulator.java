@@ -9,6 +9,11 @@ class Calculator{
     private void someOtherMethod(){
 
     }
+
+    private void newMethod(){
+
+    }
+
     private void anotherMathod(){
 
     }
