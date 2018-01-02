@@ -1,6 +1,5 @@
 .gradle
 /build/
-/out/
 !gradle/wrapper/gradle-wrapper.jar
 
 ### STS ###
@@ -10,6 +9,8 @@
 .project
 .settings
 .springBeans
+
+/out/
 
 ### IntelliJ IDEA ###
 .idea
