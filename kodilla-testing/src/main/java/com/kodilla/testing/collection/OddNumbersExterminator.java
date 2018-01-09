@@ -1,7 +1,5 @@
 package com.kodilla.testing.collection;
 
-import com.sun.org.apache.xpath.internal.SourceTree;
-
 import java.util.ArrayList;
 
 class OddNumbersExterminator {
