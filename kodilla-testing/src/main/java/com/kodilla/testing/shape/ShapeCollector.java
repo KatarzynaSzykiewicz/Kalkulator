@@ -3,13 +3,12 @@ package com.kodilla.testing.shape;
 import java.util.ArrayList;
 
 public class ShapeCollector {
-    private String shapeName;
-    private ArrayList<String> figuresList = new ArrayList<String>();
+
+    private ArrayList<Shape> figuresList = new ArrayList<Shape>();
 
 
-
-    public void addFigure(String shapeName){
-
+    public void addFigure(Shape shape){
+        figuresList.add(shape);
     }
 
     public boolean removeFigure(String shapeName){
@@ -20,8 +19,8 @@ public class ShapeCollector {
         return null;
     }
 
-    public String showFigures(){
-        return shapeName;
+    public ArrayList<Shape> getFiguresList() {
+        return figuresList;
     }
 }
 

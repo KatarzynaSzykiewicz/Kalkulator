@@ -1,6 +1,10 @@
 package com.kodilla.testing.shape;
 
-import org.junit.*;
+import org.junit.AfterClass;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
 
 public class ShapeCollectorTestSuite {
     private static int testCounter = 0;
@@ -22,28 +26,30 @@ public class ShapeCollectorTestSuite {
     }
 
     @Test
-    public void testAddFigure(){
+    public void testAddFigure() {
         //Given
         ShapeCollector shapeCollector = new ShapeCollector();
         //When
-        shapeCollector.addFigure("Triangle");
+        Circle circle = new Circle(123);
+        shapeCollector.addFigure(circle);
+
         //Then
-        Assert.assertEquals(shapeCollector.showFigures(), "Triangle");
-}
+        Assert.assertEquals(shapeCollector.getFiguresList().size(), 1);
+    }
 
     @Test
-    public void testRemoveFigure(){
+    public void testRemoveFigure() {
         //Given
         ShapeCollector shapeCollector = new ShapeCollector();
         //When
         boolean result = shapeCollector.removeFigure("Triangle");
         //Then
         Assert.assertTrue(result);
-        Assert.assertEquals(0,shapeCollector.getFigure(0));
+        Assert.assertEquals(0, shapeCollector.getFigure(0));
     }
 
     @Test
-    public void testGetFigure(){
+    public void testGetFigure() {
         //Given
         ShapeCollector shapeCollector = new ShapeCollector();
         shapeCollector.addFigure("Triangle");
@@ -55,7 +61,7 @@ public class ShapeCollectorTestSuite {
     }
 
     @Test
-    public void testShowFigure(){
+    public void testShowFigure() {
         //Given
         ShapeCollector shapeCollector = new ShapeCollector();
         shapeCollector.addFigure("Triangle");

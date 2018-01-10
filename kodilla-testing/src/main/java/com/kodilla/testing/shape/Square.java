@@ -3,12 +3,12 @@ package com.kodilla.testing.shape;
 public class Square implements Shape {
 
     @Override
-    public String GetShapeName() {
+    public String getShapeName() {
         return null;
     }
 
     @Override
-    public Double GetField() {
+    public Double getField() {
         return null;
     }
 }
