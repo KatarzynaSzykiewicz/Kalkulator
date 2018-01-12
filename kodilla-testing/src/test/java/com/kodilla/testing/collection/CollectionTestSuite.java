@@ -1,7 +1,8 @@
 package com.kodilla.testing.collection;
 
-import com.kodilla.testing.collection.OddNumbersExterminator;
 import org.junit.*;
+
+import java.util.ArrayList;
 
 public class CollectionTestSuite {
     @Before
@@ -25,17 +26,30 @@ public class CollectionTestSuite {
 
    public void testOddNumbersExterminatorEmptyList(){
        //Given
-       OddNumbersExterminator oddNumbersExterminator = new OddNumbersExterminator(n = null);
+       ArrayList<Integer> numbers = new ArrayList<>();
+       numbers.isEmpty();
+       OddNumbersExterminator oddNumbersExterminator = new OddNumbersExterminator();
        //When
-        int result = oddNumbersExterminator.exterminate();
+        ArrayList<Integer> oddNumbers = oddNumbersExterminator.exterminate(numbers);
        //Then
-        Assert.assertEquals(null, result);
+        Assert.assertEquals(0, oddNumbers.size());
    }
+
+   @Test
 
    public void testOddNumbersExterminatorNormalList(){
         //Given
-       OddNumbersExterminator oddNumbersExterminator = new OddNumbersExterminator(n = );
+       ArrayList<Integer> numbers = new ArrayList<>();
+       numbers.add(11);
+       numbers.add(12);
+       numbers.add(21);
+       numbers.add(28);
+       OddNumbersExterminator oddNumbersExterminator = new OddNumbersExterminator();
        //When
+       ArrayList<Integer>oddNumbers = oddNumbersExterminator.exterminate(numbers);
        //Then
+       for(Integer integer : oddNumbers){
+        Assert.assertTrue(integer % 2 == 0);
+       }
    }
 }
