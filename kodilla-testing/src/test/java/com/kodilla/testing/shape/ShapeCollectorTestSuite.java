@@ -22,46 +22,37 @@ public class ShapeCollectorTestSuite {
     }
 
     @Test
-    public void testAddFigure(){
+    public void testAddFigure() {
         //Given
         ShapeCollector shapeCollector = new ShapeCollector();
+        Circle circle = new Circle(10);
         //When
-        shapeCollector.addFigure("Triangle");
+        shapeCollector.addFigure(circle);
         //Then
-        Assert.assertEquals(shapeCollector.showFigures(), "Triangle");
-}
-
-    @Test
-    public void testRemoveFigure(){
-        //Given
-        ShapeCollector shapeCollector = new ShapeCollector();
-        //When
-        boolean result = shapeCollector.removeFigure("Triangle");
-        //Then
-        Assert.assertTrue(result);
-        Assert.assertEquals(0,shapeCollector.getFigure(0));
+        Assert.assertEquals(1, shapeCollector.getFiguresListSize());
     }
 
     @Test
-    public void testGetFigure(){
+    public void testRemoveFigure() {
         //Given
         ShapeCollector shapeCollector = new ShapeCollector();
-        shapeCollector.addFigure("Triangle");
+        Triangle triangle = new Triangle(24, 12);
         //When
-        String retrivedShapeCollector;
-        retrivedShapeCollector = shapeCollector.getFigure(0);
+        shapeCollector.addFigure(triangle);
+        shapeCollector.removeFigure(triangle);
         //Then
-        Assert.assertEquals(shapeCollector, retrivedShapeCollector);
+        Assert.assertEquals(0, shapeCollector.getFiguresListSize());
     }
 
     @Test
-    public void testShowFigure(){
+    public void testGetFigure() {
         //Given
         ShapeCollector shapeCollector = new ShapeCollector();
-        shapeCollector.addFigure("Triangle");
+        Square square = new Square(46);
+        shapeCollector.addFigure(square);
         //When
-        shapeCollector.showFigures();
+        shapeCollector.getFigure(0);
         //Then
-        Assert.assertEquals(shapeCollector.showFigures(), "Triangle");
+        Assert.assertEquals(square, shapeCollector.getFigure(0));
     }
 }

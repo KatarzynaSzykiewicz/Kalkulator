@@ -2,13 +2,21 @@ package com.kodilla.testing.shape;
 
 public class Triangle implements Shape {
 
-    @Override
-    public String GetShapeName() {
-        return null;
+    private double base;
+    private double height;
+
+    public Triangle(double base, double height) {
+        this.base = base;
+        this.height = height;
     }
 
     @Override
-    public Double GetField() {
-        return null;
+    public String getShapeName() {
+        return "This is a triangle.";
+    }
+
+    @Override
+    public Double getField() {
+        return 0.5 * base * height;
     }
 }

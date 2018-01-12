@@ -1,11 +1,9 @@
 package com.kodilla.testing.shape;
 
-import java.lang.reflect.Field;
+interface Shape {
 
- interface Shape {
+    String getShapeName();
 
- String GetShapeName();
-
- Double GetField();
+    Double getField();
 
 }
