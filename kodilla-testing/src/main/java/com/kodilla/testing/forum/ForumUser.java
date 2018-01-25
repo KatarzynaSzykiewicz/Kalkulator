@@ -33,7 +33,7 @@ public class ForumUser {
     public ForumPost getPost(int postNumber){
         ForumPost thePost = null;
         if(postNumber >=0 && postNumber < posts.size()){
-            thePost = getPost(postNumber);
+            thePost = posts.get(postNumber);
         }
         return thePost;
     }
@@ -41,7 +41,7 @@ public class ForumUser {
     public ForumComment getComment(int commentNumber){
         ForumComment theComment = null;
         if(commentNumber >=0 && commentNumber < comments.size()){
-            theComment = getComment(commentNumber);
+            theComment = comments.get(commentNumber);
         }
         return theComment;
     }

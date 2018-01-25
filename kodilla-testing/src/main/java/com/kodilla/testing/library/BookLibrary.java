@@ -20,17 +20,16 @@ public class BookLibrary {
         return bookList;
     }
 
-    public List<Book> listBooksInHandsOf(LibraryUser libraryUser){
-        List<Book> borrowedBookList = new ArrayList<Book>();
-        Book book1 = new Book("Aaa", "Ttt", 1995);
-        borrowedBookList.add(book1);
-
-        //boolean rentABook(LibraryUser libraryUser, Book book1);
-
-        //int returnBooks(LibraryUser libraryUser);
-        return null;
+    // zad.6.6
+    private LibraryUser libraryUser;
+    private Book book;
 
 
+
+    public List<Book> listBooksInHandsOf(LibraryUser libraryUser) {
+        List<Book> bookList = libraryDatabase.listBooksInHandsOf(libraryUser);
+        return bookList;
     }
-
 }
+
+

@@ -88,4 +88,50 @@ public class BookDirectoryTestSuite {
         assertEquals(0, theListOfBooks10.size());
         Mockito.verify(libraryDatabaseMock, Mockito.times(0)).listBooksWithCondition(anyString());
     }
+
+    @Test
+    public void testListBooksInHandsOf1Book() {
+        //Given
+        LibraryDatabase libraryDatabaseMock = mock(LibraryDatabase.class);
+        BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
+        LibraryUser libraryUser = new LibraryUser("aa", "bb", "IB123");
+        when(libraryDatabaseMock.listBooksInHandsOf(libraryUser)).thenReturn(generateListOfNBooks(1));
+        //When
+        List<Book> theBooks = bookLibrary.listBooksInHandsOf(libraryUser);
+
+        //Then
+        assertEquals(1, theBooks.size());
+    }
+
+    @Test
+    public void testListBooksInHandsOf5Books() {
+        //Given
+        LibraryDatabase libraryDatabaseMock = mock(LibraryDatabase.class);
+        BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
+        LibraryUser libraryUser = new LibraryUser("Jan", "Kowalski", "1238");
+        when(libraryDatabaseMock.listBooksInHandsOf(libraryUser)).thenReturn(generateListOfNBooks(5));
+
+        //When
+        List<Book> borrowedBooks = bookLibrary.listBooksInHandsOf(libraryUser);
+
+        //Then
+        assertEquals(5, borrowedBooks.size());
+    }
+
+    @Test
+    public void testListBooksInHandsOf0Books() {
+        //Given
+        LibraryDatabase libraryDatabaseMock = mock(LibraryDatabase.class);
+        BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
+        LibraryUser libraryUser = new LibraryUser("Krystyna", "Deszcz", "5263");
+        when(libraryDatabaseMock.listBooksInHandsOf(libraryUser)).thenReturn(generateListOfNBooks(0));
+
+        //When
+        List<Book> bookInHandsOf = bookLibrary.listBooksInHandsOf(libraryUser);
+
+        //Then
+        assertEquals(0, bookInHandsOf.size());
+    }
+
+
 }
