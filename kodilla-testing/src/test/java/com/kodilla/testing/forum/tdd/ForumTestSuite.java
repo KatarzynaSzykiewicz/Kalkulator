@@ -64,7 +64,7 @@ public class ForumTestSuite {
         retrievedPost = forumUser.getPost(0);
 
         //Then
-        Assert.assertEquals(thePost, retrievedPost);
+        Assert.assertEquals(retrievedPost, 0);
     }
 
     @Test

@@ -6,7 +6,11 @@ import org.mockito.Mockito;
 
 import java.util.ArrayList;
 
+import static jdk.nashorn.internal.objects.Global.Infinity;
+
 public class StatisticsTestSuite {
+
+
 
     @Test
     public void testCalculateAdvStatistics0Posts() {
@@ -25,12 +29,12 @@ public class StatisticsTestSuite {
         count.calculateAdvStatistics(statistics);
 
         //Then
-        Assert.assertTrue(count.getUserNumber() == 2);
-        Assert.assertTrue(count.getPostNumber() == 0);
-        Assert.assertTrue(count.getCommentNumber() == 12);
+        Assert.assertTrue(count.getUsersNumber() == 2.0);
+        Assert.assertTrue(count.getPostsNumber() == 0.0);
+        Assert.assertTrue(count.getCommentsNumber() == 12.0);
         Assert.assertTrue(count.getAveragePostsNumberPerUser() == 0.0);
         Assert.assertTrue(count.getAverageCommendNumberPerUser() == 6.0);
-        Assert.assertTrue(count.getAverageCommendNumberPerPost() == 0.0);
+        Assert.assertTrue(count.getAverageCommendNumberPerPost() == Infinity);
 
     }
 
@@ -53,10 +57,10 @@ public class StatisticsTestSuite {
         stat.calculateAdvStatistics(statistics);
 
         //Then
-        Assert.assertTrue(stat.getCommentNumber() == 120);
-        Assert.assertTrue(stat.getUserNumber() == 5);
-        Assert.assertTrue(stat.getPostNumber() == 1000);
-        Assert.assertTrue(stat.getAverageCommendNumberPerPost() == 0.0);
+        Assert.assertTrue(stat.getCommentsNumber() == 120.0);
+        Assert.assertTrue(stat.getUsersNumber() == 5.0);
+        Assert.assertTrue(stat.getPostsNumber() == 1000.0);
+        Assert.assertTrue(stat.getAverageCommendNumberPerPost() == 0.12);
         Assert.assertTrue(stat.getAverageCommendNumberPerUser() == 24.0);
         Assert.assertTrue(stat.getAveragePostsNumberPerUser() == 200.0);
     }
@@ -79,10 +83,10 @@ public class StatisticsTestSuite {
         stat.calculateAdvStatistics(statistics);
 
         //Then
-        Assert.assertTrue(stat.getCommentNumber() == 0);
-        Assert.assertTrue(stat.getPostNumber() == 5);
-        Assert.assertTrue(stat.getUserNumber() == 3);
-        Assert.assertTrue(stat.getAveragePostsNumberPerUser() == 1.0);
+        Assert.assertTrue(stat.getCommentsNumber() == 0.0);
+        Assert.assertTrue(stat.getPostsNumber() == 5.0);
+        Assert.assertTrue(stat.getUsersNumber() == 3.0);
+        Assert.assertTrue(stat.getAveragePostsNumberPerUser() == 1.6666666666666667);
         Assert.assertTrue(stat.getAverageCommendNumberPerUser() == 0.0);
         Assert.assertTrue(stat.getAverageCommendNumberPerPost() == 0.0);
     }
@@ -106,12 +110,12 @@ public class StatisticsTestSuite {
         stat.calculateAdvStatistics(statistics);
 
         //Then
-        Assert.assertTrue(stat.getCommentNumber() == 20);
-        Assert.assertTrue(stat.getPostNumber() == 300);
-        Assert.assertTrue(stat.getUserNumber() == 4);
+        Assert.assertTrue(stat.getCommentsNumber() == 20.0);
+        Assert.assertTrue(stat.getPostsNumber() == 300.0);
+        Assert.assertTrue(stat.getUsersNumber() == 4.0);
         Assert.assertTrue(stat.getAveragePostsNumberPerUser() == 75.0);
         Assert.assertTrue(stat.getAverageCommendNumberPerUser() == 5.0);
-        Assert.assertTrue(stat.getAverageCommendNumberPerPost() == 0.0);
+        Assert.assertTrue(stat.getAverageCommendNumberPerPost() == 0.06666666666666667);
     }
 
     @Test
@@ -134,14 +138,16 @@ public class StatisticsTestSuite {
         count.calculateAdvStatistics(statistics);
 
         //Then
-        Assert.assertTrue(count.getUserNumber() == 3);
-        Assert.assertTrue(count.getPostNumber() == 10);
-        Assert.assertTrue(count.getCommentNumber() == 50);
-        Assert.assertTrue(count.getAveragePostsNumberPerUser() == 3.0);
-        Assert.assertTrue(count.getAverageCommendNumberPerUser() == 16.0);
+        Assert.assertTrue(count.getUsersNumber() == 3.0);
+        Assert.assertTrue(count.getPostsNumber() == 10.0);
+        Assert.assertTrue(count.getCommentsNumber() == 50.0);
+        Assert.assertTrue(count.getAveragePostsNumberPerUser() == 3.3333333333333335);
+        Assert.assertTrue(count.getAverageCommendNumberPerUser() == 16.666666666666668);
         Assert.assertTrue(count.getAverageCommendNumberPerPost() == 5.0);
 
     }
+
+
 
     @Test
     public void testCalculateAdvStatisticsZeroUsers() {
@@ -158,12 +164,12 @@ public class StatisticsTestSuite {
         count.calculateAdvStatistics(statistics);
 
         //Then
-        Assert.assertTrue(count.getUserNumber() == 0);
-        Assert.assertTrue(count.getPostNumber() == 12);
-        Assert.assertTrue(count.getCommentNumber() == 4);
-        Assert.assertTrue(count.getAveragePostsNumberPerUser() == 0.0);
-        Assert.assertTrue(count.getAverageCommendNumberPerUser() == 0.0);
-        Assert.assertTrue(count.getAverageCommendNumberPerPost() == 0.0);
+        Assert.assertTrue(count.getUsersNumber() == 0.0);
+        Assert.assertTrue(count.getPostsNumber() == 12.0);
+        Assert.assertTrue(count.getCommentsNumber() == 4.0);
+        Assert.assertTrue(count.getAveragePostsNumberPerUser() == Infinity);
+        Assert.assertTrue(count.getAverageCommendNumberPerUser() == Infinity);
+        Assert.assertTrue(count.getAverageCommendNumberPerPost() == 0.3333333333333333);
     }
 
 
@@ -185,11 +191,11 @@ public class StatisticsTestSuite {
         count.calculateAdvStatistics(statistics);
 
         //Then
-        Assert.assertTrue(count.getUserNumber() == 100);
-        Assert.assertTrue(count.getPostNumber() == 421);
-        Assert.assertTrue(count.getCommentNumber() == 653);
-        Assert.assertTrue(count.getAverageCommendNumberPerUser() == 6.0);
-        Assert.assertTrue(count.getAveragePostsNumberPerUser() == 4.0);
-        Assert.assertTrue(count.getAverageCommendNumberPerPost() == 1.0);
+        Assert.assertTrue(count.getUsersNumber() == 100.0);
+        Assert.assertTrue(count.getPostsNumber() == 421.0);
+        Assert.assertTrue(count.getCommentsNumber() == 653.0);
+        Assert.assertTrue(count.getAverageCommendNumberPerUser() == 6.53);
+        Assert.assertTrue(count.getAveragePostsNumberPerUser() == 4.21);
+        Assert.assertTrue(count.getAverageCommendNumberPerPost() == 1.5510688836104514);
     }
 }

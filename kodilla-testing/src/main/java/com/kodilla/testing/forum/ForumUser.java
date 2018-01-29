@@ -32,7 +32,7 @@ public class ForumUser {
     }
     public ForumPost getPost(int postNumber){
         ForumPost thePost = null;
-        if(postNumber >=0 && postNumber < posts.size()){
+        if(postNumber >=0 && postNumber > posts.size()){
             thePost = getPost(postNumber);
         }
         return thePost;
