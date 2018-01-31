@@ -1,8 +1,7 @@
 package com.kodilla.stream;
 
 
-import com.kodilla.stream.beautifier.PoemBeautifier;
-import com.kodilla.stream.beautifier.PoemDecorator;
+import com.kodilla.stream.iterate.NumbersGenerator;
 import com.kodilla.stream.lambda.ExpressionExecutor;
 import com.kodilla.stream.lambda.Processor;
 import com.kodilla.stream.lambda.SaySomething;
@@ -36,10 +35,13 @@ public class StreamMain {
 
         //zad. 7.1
 
-        PoemBeautifier poemBeautifier = new PoemBeautifier();
-        poemBeautifier.beautify(("Ula ma kota.", "@") -> System.out.println("@" + "Ula ma kota." + "@"));
-        poemBeautifier.beautify("Pada śnieg.", ("***") -> System.out.println("***" + "Pada śnieg"));
-        poemBeautifier.beautify("Zbliza sie wiosna.", text.toUpperText())???
+//        PoemBeautifier poemBeautifier = new PoemBeautifier();
+//        poemBeautifier.beautify(("Ula ma kota.", "@") -> System.out.println("@" + "Ula ma kota." + "@"));
+//        poemBeautifier.beautify("Pada śnieg.", ("***") -> System.out.println("***" + "Pada śnieg"));
+//        poemBeautifier.beautify("Zbliza sie wiosna.", text.toUpperText())???
+
+        System.out.println("Using Stream to generate even numbers from 1 to 20");
+        NumbersGenerator.generateEven(20);
 
     }
 
