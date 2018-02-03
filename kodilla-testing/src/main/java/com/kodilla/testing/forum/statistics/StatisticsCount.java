@@ -11,14 +11,20 @@ public class StatisticsCount {
     private double averageCommendNumberPerPost;
 
 
+
+    double usersNumber =(double)userNumber;
+    double postsNumber =(double)postNumber;
+    double commentsNumber =(double)commentNumber;
+
+
     public void calculateAdvStatistics(Statistics statistics) {
-        userNumber = statistics.userNames().size();
-        postNumber = statistics.postCount();
-        commentNumber = statistics.commentsCount();
+        usersNumber = statistics.userNames().size();
+        postsNumber = statistics.postCount();
+        commentsNumber = statistics.commentsCount();
         this.statistics = statistics;
-        averageCommendNumberPerUser = commentNumber / userNumber;
-        averagePostsNumberPerUser = postNumber / userNumber;
-        averageCommendNumberPerPost = commentNumber / postNumber;
+        averageCommendNumberPerUser = commentsNumber / usersNumber;
+        averagePostsNumberPerUser = postsNumber / usersNumber;
+        averageCommendNumberPerPost = commentsNumber / postsNumber;
     }
 
 
@@ -40,16 +46,16 @@ public class StatisticsCount {
         return averageCommendNumberPerPost;
     }
 
-    public int getUserNumber() {
-        return userNumber;
+
+    public double getUsersNumber() {
+        return usersNumber;
     }
 
-    public int getPostNumber() {
-        return postNumber;
+    public double getPostsNumber() {
+        return postsNumber;
     }
 
-    public int getCommentNumber() {
-        return commentNumber;
+    public double getCommentsNumber() {
+        return commentsNumber;
     }
-
 }
