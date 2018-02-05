@@ -47,11 +47,11 @@ public cs+zlass ForumUserTestSuite {
         //   user3:  "Key West"
         //   user7:  "Washington"
         //   user10: "Miami"
-        Assert.assertEquals(3, user1.getLocationsOfFriends().size());
-        Assert.assertTrue(user1.getLocationsOfFriends().contains("Key West"));
-        Assert.assertTrue(user1.getLocationsOfFriends().contains("Washington"));
-        Assert.assertTrue(user1.getLocationsOfFriends().contains("Miami"));
-        Assert.assertFalse(user1.getLocationsOfFriends().contains("Orlando"));
+        Assert.assertEquals(3, user1.getLocationOfFriends().size());
+        Assert.assertTrue(user1.getLocationOfFriends().contains("Key West"));
+        Assert.assertTrue(user1.getLocationOfFriends().contains("Washington"));
+        Assert.assertTrue(user1.getLocationOfFriends().contains("Miami"));
+        Assert.assertFalse(user1.getLocationOfFriends().contains("Orlando"));
 
     }
 
