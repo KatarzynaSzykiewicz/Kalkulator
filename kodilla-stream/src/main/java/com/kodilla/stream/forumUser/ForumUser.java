@@ -1,7 +1,6 @@
 package com.kodilla.stream.forumUser;
 
 import java.time.LocalDate;
-import java.time.Period;
 
 public final class ForumUser {
     private final Integer userID;
@@ -19,15 +18,15 @@ public final class ForumUser {
         this.numberOfPosts = numberOfPosts;
     }
 
-    public int calculateAge() {
-        private final LocalDate currentDate;
-        this.currentDate = new currentDate;
-            if ((birthDate != null) && (currentDate != null)) {
-                return Period.between(birthDate, currentDate).getYears();
-            } else {
-                return 0;
-            }
-    }
+//    public int calculateAge() {
+//        private final LocalDate currentDate;
+//        this.currentDate = new currentDate;
+//            if ((birthDate != null) && (currentDate != null)) {
+//                return Period.between(birthDate, currentDate).getYears();
+//            } else {
+//                return 0;
+//            }
+//    }
 
     public int getUserID() {
         return userID;
