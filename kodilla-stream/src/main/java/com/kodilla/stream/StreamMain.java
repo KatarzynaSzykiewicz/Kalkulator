@@ -2,11 +2,8 @@ package com.kodilla.stream;
 
 
 import com.kodilla.stream.beautifier.PoemBeautifier;
-import com.kodilla.stream.beautifier.PoemDecorator;
 import com.kodilla.stream.book.Book;
 import com.kodilla.stream.book.BookDirectory;
-import com.kodilla.stream.forumUser.Forum;
-import com.kodilla.stream.forumUser.ForumUser;
 import com.kodilla.stream.person.People;
 
 import java.util.List;
@@ -42,34 +39,34 @@ public class StreamMain {
         //zad. 7.1
 
         //option 1
-        PoemBeautifier poemBeautifier = new PoemBeautifier();
+//        PoemBeautifier poemBeautifier = new PoemBeautifier();
 
-        String text = "Ula ma kota.";
-        PoemDecorator poemDecorator = new PoemDecoratorImpl();
+//        String text = "Ula ma kota.";
+//        PoemDecorator poemDecorator = new PoemDecoratorImpl();
 
 //        poemBeautifier.beautify(text, poemDecorator);
 
         //option 2
-        PoemDecorator poemDecorator2 = new PoemDecorator() {
-            @Override
-            public String decorate(String text) {
-                return "@" + text + "@";
-            }
-        };
+//        PoemDecorator poemDecorator2 = new PoemDecorator() {
+//            @Override
+//            public String decorate(String text) {
+//                return "@" + text + "@";
+//            }
+//        };
 
 //        poemBeautifier.beautify("Ula ma kota.", poemDecorator2);
 
         //option 3
-        PoemDecorator poemDecorator3 = (text3) -> ("@" + text3 + "@");
+//        PoemDecorator poemDecorator3 = (text3) -> ("@" + text3 + "@");
 
 //        poemBeautifier.beautify("Ula ma kota.", poemDecorator3);
 
         //option 4
-        poemBeautifier.beautify("Ula ma kota.", (text4) -> (("@" + text4 + "@").toUpperCase()));
+        PoemBeautifier poemBeautifier = new PoemBeautifier();
+        poemBeautifier.beautify("Ula ma kota.",(text4) -> (("@" + text4 + "@").toUpperCase()));
+        poemBeautifier.beautify("Pada śnieg!",(text) -> (("***" + text + "***").toUpperCase()));
+        poemBeautifier.beautify("Zbliża się wiosna.", (text -> ("~~~~" + text + "~~~~")));
 
-
-//        poemBeautifier.beautify("Pada śnieg.", ("***") -> System.out.println("***" + "Pada śnieg"));
-//        poemBeautifier.beautify("Zbliza sie wiosna.", text.toUpperText())
 
 //        System.out.println("Using Stream to generate even numbers from 1 to 20");
 //        NumbersGenerator.generateEven(20);
@@ -134,15 +131,15 @@ public class StreamMain {
 
         //Zad 7.3
 
-        Forum theForum = new Forum();
-        Map<Integer, ForumUser> theResult = theForum.getUserList().stream()
-                .filter(forumUser -> forumUser.getUserSex() = 'm')
-                .filter(forumUser -> forumUser.calculateAge() <= 20)
-                .filter(forumUser -> forumUser.getNumberOfPosts()) >= 1)
-                .collect(Collectors.toMap(ForumUser::getUserID, forumUser -> forumUser));
-        theResult.entrySet().stream()
-                .map(entry -> entry.getKey() + ": " + entry.getValue())
-                .forEach(System.out::println);
+//        Forum theForum = new Forum();
+//        Map<Integer, ForumUser> theResult = theForum.getUserList().stream()
+//                .filter(forumUser -> forumUser.getUserSex() = 'm')
+//                .filter(forumUser -> forumUser.calculateAge() <= 20)
+//                .filter(forumUser -> forumUser.getNumberOfPosts()) >= 1)
+//                .collect(Collectors.toMap(ForumUser::getUserID, forumUser -> forumUser));
+//        theResult.entrySet().stream()
+//                .map(entry -> entry.getKey() + ": " + entry.getValue())
+//                .forEach(System.out::println);
     }
 
 }
