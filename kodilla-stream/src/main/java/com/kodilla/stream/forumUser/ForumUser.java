@@ -7,25 +7,27 @@ public final class ForumUser {
     private final Integer userID;
     private final String userName;
     private final char userSex;
-    private final LocalDate dateOfBirth;
+    private final LocalDate birthDate;
     private final int numberOfPosts;
 
-    public ForumUser(final int userID, final String userName, final char userSex, final LocalDate dateOfBirth, final int numberOfPosts) {
+
+    public ForumUser(final int userID, final String userName, final char userSex, final LocalDate birthDate, final int numberOfPosts) {
         this.userID = userID;
         this.userName = userName;
         this.userSex = userSex;
-        this.dateOfBirth = dateOfBirth;
+        this.birthDate = birthDate;
         this.numberOfPosts = numberOfPosts;
     }
 
-
-        public int calculateAge(LocalDate birthDate, LocalDate currentDate) {
+    public int calculateAge() {
+        private final LocalDate currentDate;
+        this.currentDate = new currentDate;
             if ((birthDate != null) && (currentDate != null)) {
                 return Period.between(birthDate, currentDate).getYears();
             } else {
                 return 0;
             }
-        }
+    }
 
     public int getUserID() {
         return userID;
@@ -40,7 +42,7 @@ public final class ForumUser {
     }
 
     public LocalDate getDateOfBirth() {
-        return dateOfBirth;
+        return birthDate;
     }
 
     public int getNumberOfPosts() {
