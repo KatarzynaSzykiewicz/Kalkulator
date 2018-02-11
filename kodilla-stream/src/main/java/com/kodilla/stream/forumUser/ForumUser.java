@@ -18,15 +18,6 @@ public final class ForumUser {
         this.numberOfPosts = numberOfPosts;
     }
 
-//    public int calculateAge() {
-//        private final LocalDate currentDate;
-//        this.currentDate = new currentDate;
-//            if ((birthDate != null) && (currentDate != null)) {
-//                return Period.between(birthDate, currentDate).getYears();
-//            } else {
-//                return 0;
-//            }
-//    }
 
     public int getUserID() {
         return userID;
@@ -46,6 +37,17 @@ public final class ForumUser {
 
     public int getNumberOfPosts() {
         return numberOfPosts;
+    }
+
+    @Override
+    public String toString() {
+        return "ForumUser{" +
+                "userID=" + userID +
+                ", userName='" + userName + '\'' +
+                ", userSex=" + userSex +
+                ", birthDate=" + birthDate +
+                ", numberOfPosts=" + numberOfPosts +
+                '}';
     }
 }
 
