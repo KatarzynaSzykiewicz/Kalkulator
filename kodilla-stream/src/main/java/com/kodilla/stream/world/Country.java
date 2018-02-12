@@ -1,3 +1,4 @@
+/*
 package com.kodilla.stream.world;
 
 public final class Country {
@@ -6,3 +7,4 @@ public final class Country {
 
 
 }
+*/
