@@ -16,37 +16,37 @@ public class WorldTestSuite {
         Set<Country> countriesOfEurope = new HashSet<>();
 
         Country poland = new Country();
-        poland.setNumberOfCitizens(BigDecimal.valueOf(38000000));
+        poland.setNumberOfCitizens(BigDecimal.valueOf(38_000_000));
 
         Country spain = new Country();
-        spain.setNumberOfCitizens(BigDecimal.valueOf(46500000));
+        spain.setNumberOfCitizens(BigDecimal.valueOf(46_500_000));
 
         Country island = new Country();
-        island.setNumberOfCitizens(BigDecimal.valueOf(350000));
+        island.setNumberOfCitizens(BigDecimal.valueOf(350_000));
 
 
         Set<Country> countriesOfAsia = new HashSet<>();
 
         Country china = new Country();
-        china.setNumberOfCitizens(BigDecimal.valueOf(1400000000));
+        china.setNumberOfCitizens(BigDecimal.valueOf(1_400_000_000));
 
         Country russia = new Country();
-        russia.setNumberOfCitizens(BigDecimal.valueOf(150000000));
+        russia.setNumberOfCitizens(BigDecimal.valueOf(150_000_000));
 
         Country indie = new Country();
-        indie.setNumberOfCitizens(BigDecimal.valueOf(1330000000));
+        indie.setNumberOfCitizens(BigDecimal.valueOf(1_330_000_000));
 
 
         Set<Country> countriesOfAfrica = new HashSet<>();
 
         Country algeria = new Country();
-        algeria.setNumberOfCitizens(BigDecimal.valueOf(40610000));
+        algeria.setNumberOfCitizens(BigDecimal.valueOf(40_610_000));
 
         Country kenya = new Country();
-        kenya.setNumberOfCitizens(BigDecimal.valueOf(48460000));
+        kenya.setNumberOfCitizens(BigDecimal.valueOf(48_460_000));
 
         Country gambia = new Country();
-        gambia.setNumberOfCitizens(BigDecimal.valueOf(2039000));
+        gambia.setNumberOfCitizens(BigDecimal.valueOf(2_039_000));
 
         Continent europe = new Continent();
         Continent asia = new Continent();
