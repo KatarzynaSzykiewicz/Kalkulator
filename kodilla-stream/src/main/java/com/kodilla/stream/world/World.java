@@ -1,24 +1,24 @@
 package com.kodilla.stream.world;
 
-import java.math.BigDecimal;
-import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
 
+public class World {
 
-public final class World {
-    private final String continentName;
-    private final HashMap<Continent, Country> continents = new HashMap<>();
+    private Set<Continent> continents = new HashSet<>();
 
-    public World(String continentName) {
-        this.continentName = continentName;
+    public Set<Continent> getContinents() {
+        return continents;
     }
 
-    public BigDecimal getPeopleQuantity(){
-        return continents.stream()
-                .flatMap(continent -> continent.getCountries().stream())
-                .map(Continent::getNumberOfPeopleInCountries)
-                .reduce(BigDecimal.ZERO, (sum, current) -> sum = sum.add(current));
+    public void setContinents(Set<Continent> continents) {
+        this.continents = continents;
+    }
 
-        System.out.println("The number of people is " + continents);
-
+    @Override
+    public String toString() {
+        return "World{" +
+                "continents=" + continents +
+                '}';
     }
 }
