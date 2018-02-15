@@ -1,11 +1,10 @@
 package com.kodilla.stream.forum;
 
-import org.junit.Test;
 import org.junit.Assert;
 import org.junit.Test;
 
 
-public cs+zlass ForumUserTestSuite {
+public class ForumUserTestSuite {
 
     @Test
     public void testGetLocationOfFriends() {
@@ -99,10 +98,10 @@ public void testGetLocationsOfFriendsOfFriends() {
         //   user7:  user1: - should be skipped ("this" in context of user1)
         //           user3: "Key West"
         //   user10: user1: - should be skipped ("this" in context of user1)
-        Assert.assertEquals(3, user1.getLocationsOfFriendsOfFriends().size());
-        Assert.assertTrue(user1.getLocationsOfFriendsOfFriends().contains("Key West"));
-        Assert.assertTrue(user1.getLocationsOfFriendsOfFriends().contains("Washington"));
-        Assert.assertTrue(user1.getLocationsOfFriendsOfFriends().contains("Miami"));
-        Assert.assertFalse(user1.getLocationsOfFriendsOfFriends().contains("Orlando"));
+        Assert.assertEquals(3, user1.getLocationOfFriendOfFriends().size());
+        Assert.assertTrue(user1.getLocationOfFriendOfFriends().contains("Key West"));
+        Assert.assertTrue(user1.getLocationOfFriendOfFriends().contains("Washington"));
+        Assert.assertTrue(user1.getLocationOfFriendOfFriends().contains("Miami"));
+        Assert.assertFalse(user1.getLocationOfFriendOfFriends().contains("Orlando"));
         }
 }
