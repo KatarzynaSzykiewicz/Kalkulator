@@ -140,7 +140,16 @@ public class BoardTestSuite {
     @Test
     public void testAddTaskListAverageWorkingOnTask() {
         //Given
+        Board project = prepareTestData();
         //When
+        List<TaskList> inProgressTasks = new ArrayList<>();
+        inProgressTasks.add(new TaskList("In progress"));
+        long taskAverageTime = project.getTaskLists().stream()
+                .filter(inProgressTasks::contains)
+                .flatMap(t -> t.getTasks().stream())
+                .map(t1 -> t1.getCreated())
+                .filter(d -> d.minus(LocalDate.now(), LocalDate.getCreated()))
+                .sum
         //Then
     }
 }
