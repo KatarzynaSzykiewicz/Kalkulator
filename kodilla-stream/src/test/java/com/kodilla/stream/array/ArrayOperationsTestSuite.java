@@ -13,12 +13,7 @@ public class ArrayOperationsTestSuite implements ArrayOperations{
 
 
         //When
-//        double result = numbers.getAverage;
-        double result = IntStream.range(0, numbers.length)
-                .map(s -> {System.out.println("The elements are: " + s)});
-//                .average()
-//                .getAsDouble();
-
+       double result = numbers.getAverage;
 
         //Then
         Assert.assertEquals(33.95, result);
