@@ -6,6 +6,7 @@ import org.junit.Test;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static java.util.stream.Collectors.toList;
 
@@ -149,7 +150,10 @@ public class BoardTestSuite {
                 .flatMap(t -> t.getTasks().stream())
                 .map(t1 -> t1.getCreated())
                 .filter(d -> d.minus(LocalDate.now(), LocalDate.getCreated()))
-                .sum
+                .average()
+                .getAsDouble();
+
         //Then
+        Assert.assertEquals(10, taskAverageTime);
     }
 }
