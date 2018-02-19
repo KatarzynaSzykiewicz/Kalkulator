@@ -13,7 +13,7 @@ public class ArrayOperationsTestSuite implements ArrayOperations{
 
 
         //When
-       double result = numbers.getAverage;
+       double result = numbers.getAverage();
 
         //Then
         Assert.assertEquals(33.95, result);
