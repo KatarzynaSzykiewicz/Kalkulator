@@ -3,8 +3,6 @@ package com.kodilla.stream.array;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.util.stream.IntStream;
-
 public class ArrayOperationsTestSuite implements ArrayOperations{
     @Test
     public void testGetAverage() {
@@ -13,9 +11,9 @@ public class ArrayOperationsTestSuite implements ArrayOperations{
 
 
         //When
-       double result = numbers.getAverage();
+       double result = ArrayOperations.getAverage(numbers);
 
         //Then
-        Assert.assertEquals(33.95, result);
+        Assert.assertEquals(33.95, result,0);
     }
 }
