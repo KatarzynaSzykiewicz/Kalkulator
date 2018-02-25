@@ -152,6 +152,6 @@ public class BoardTestSuite {
                 .orElse(0.0);
 
         //Then
-        Assert.assertEquals(18.33, taskAverageTime, 001);
+        Assert.assertEquals(18.33, taskAverageTime, 0.001);
     }
 }
