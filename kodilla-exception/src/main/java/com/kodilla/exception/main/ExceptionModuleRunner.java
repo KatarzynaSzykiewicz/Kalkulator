@@ -10,11 +10,11 @@ public class ExceptionModuleRunner {
 //        FileReader fileReader = new FileReader();
 //        fileReader.readFile();
 
-        FileReaderWithoutHandling fileReaderWithoutHandling = new FileReaderWithoutHandling();
-        try {
-            fileReaderWithoutHandling.readFile();
-        } catch (IOException e) {
-            e.printStackTrace();
+//        FileReaderWithoutHandling fileReaderWithoutHandling = new FileReaderWithoutHandling();
+//        try {
+//            fileReaderWithoutHandling.readFile();
+//        } catch (IOException e) {
+//            e.printStackTrace();
         }
     }
 }
