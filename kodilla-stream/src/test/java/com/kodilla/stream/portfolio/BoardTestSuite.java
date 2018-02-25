@@ -7,6 +7,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.time.temporal.ChronoUnit;
 
 import static java.util.stream.Collectors.toList;
 
@@ -148,12 +149,11 @@ public class BoardTestSuite {
         long taskAverageTime = project.getTaskLists().stream()
                 .filter(inProgressTasks::contains)
                 .flatMap(t -> t.getTasks().stream())
-                .map(t1 -> t1.getCreated())
-                .filter(d -> d.minus(LocalDate.now(), LocalDate.getCreated()))
+                .map(t1 -> t1.DAYS.between(t1.getDeadline(), t1.getCreated()))
                 .average()
-                .getAsDouble();
+                .orElse(0.0);
 
         //Then
-        Assert.assertEquals(10, taskAverageTime);
+        Assert.assertEquals(18.33, taskAverageTime,001);
     }
 }
