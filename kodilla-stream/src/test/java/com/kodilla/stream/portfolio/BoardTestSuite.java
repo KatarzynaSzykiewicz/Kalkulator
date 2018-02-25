@@ -6,8 +6,6 @@ import org.junit.Test;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
-import java.time.temporal.ChronoUnit;
 
 import static java.util.stream.Collectors.toList;
 
@@ -154,6 +152,6 @@ public class BoardTestSuite {
                 .orElse(0.0);
 
         //Then
-        Assert.assertEquals(18.33, taskAverageTime,001);
+        Assert.assertEquals(18.33, taskAverageTime, 001);
     }
 }
