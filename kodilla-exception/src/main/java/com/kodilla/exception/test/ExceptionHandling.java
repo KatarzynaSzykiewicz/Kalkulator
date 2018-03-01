@@ -1,7 +1,5 @@
 package com.kodilla.exception.test;
 
-import java.io.IOException;
-
 public class ExceptionHandling {
     public static void main(String args[]) {
 
@@ -10,7 +8,7 @@ public class ExceptionHandling {
         try {
             secondChallenge.probablyIWillThrowException(1.0, 1.5);
         } catch (Exception e) {
-            throw new Exception();
+            System.out.println("Something goes wrong! Error: " + e);
         } finally {
             System.out.println("Finally!");
         }
