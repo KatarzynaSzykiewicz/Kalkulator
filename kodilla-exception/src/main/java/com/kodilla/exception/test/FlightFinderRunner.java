@@ -1,4 +1,4 @@
-package com.kodilla.exception.test;
+    package com.kodilla.exception.test;
 
 import java.util.HashMap;
 
@@ -13,7 +13,7 @@ public class FlightFinderRunner {
         flights.put(flight2, true);
 
 
-        FlightFinder flightFinder = new FlightFinder();
+        FlightFinder flightFinder = new FlightFinder(flights);
         try {
             flightFinder.findFlight(flight2);
         } catch (RouteNotFoundException e) {
