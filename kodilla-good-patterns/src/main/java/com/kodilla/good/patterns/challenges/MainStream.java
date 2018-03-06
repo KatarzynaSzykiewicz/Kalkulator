@@ -8,7 +8,7 @@ public class MainStream {
         MovieStore movieStore = new MovieStore();
 
          String theResult = movieStore.getMovies().entrySet().stream()
-                 .map(s -> s.getValue())
+                 .flatMap(s -> s.getValue().stream())
                  .collect(Collectors.joining("!"));
 
          System.out.println(theResult);
