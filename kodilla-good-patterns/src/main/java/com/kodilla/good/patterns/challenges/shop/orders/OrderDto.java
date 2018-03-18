@@ -1,4 +1,6 @@
-package com.kodilla.good.patterns.challenges.shop;
+package com.kodilla.good.patterns.challenges.shop.orders;
+
+import com.kodilla.good.patterns.challenges.shop.users.User;
 
 public class OrderDto {
     public User user;
@@ -15,5 +17,13 @@ public class OrderDto {
 
     public boolean isOrdered() {
         return isOrdered;
+    }
+
+    @Override
+    public String toString() {
+        return "OrderDto{" +
+                "user=" + user +
+                ", isOrdered=" + isOrdered +
+                '}';
     }
 }

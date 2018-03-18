@@ -1,4 +1,6 @@
-package com.kodilla.good.patterns.challenges.shop;
+package com.kodilla.good.patterns.challenges.shop.orders;
+
+import com.kodilla.good.patterns.challenges.shop.users.InformationService;
 
 public class ProductOrderServiceProcessor {
 
@@ -6,7 +8,7 @@ public class ProductOrderServiceProcessor {
     private OrderRepository orderRepository;
     private OrderService orderService;
 
-    public ProductOrderServiceProcessor() {
+    public ProductOrderServiceProcessor(final InformationService informationService, final OrderRepository orderRepository, final OrderService orderService) {
         this.informationService = informationService;
         this.orderRepository = orderRepository;
         this.orderService = orderService;
@@ -23,5 +25,9 @@ public class ProductOrderServiceProcessor {
         } else {
             return new OrderDto(orderRequest.getUser(), false);
         }
+
+
+
+
     }
 }

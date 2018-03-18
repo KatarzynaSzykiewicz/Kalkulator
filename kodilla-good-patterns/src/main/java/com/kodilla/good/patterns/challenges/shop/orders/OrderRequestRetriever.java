@@ -1,4 +1,7 @@
-package com.kodilla.good.patterns.challenges.shop;
+package com.kodilla.good.patterns.challenges.shop.orders;
+
+import com.kodilla.good.patterns.challenges.shop.products.Products;
+import com.kodilla.good.patterns.challenges.shop.users.User;
 
 import java.util.HashSet;
 
@@ -16,7 +19,8 @@ public class OrderRequestRetriever {
         basket.add(product2);
         basket.add(product3);
 
-        return new OrderRequest(user, basket);
+        double value = retrieve().basketValue;
 
+        return new OrderRequest(user, basket, value);
     }
 }

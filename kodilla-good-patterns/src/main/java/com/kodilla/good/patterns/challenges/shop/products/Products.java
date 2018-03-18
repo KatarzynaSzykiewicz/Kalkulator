@@ -1,4 +1,4 @@
-package com.kodilla.good.patterns.challenges.shop;
+package com.kodilla.good.patterns.challenges.shop.products;
 
 import java.util.Objects;
 
@@ -17,6 +17,14 @@ public class Products {
 
     public double getPrice() {
         return price;
+    }
+
+    @Override
+    public String toString() {
+        return "Products{" +
+                "name='" + name + '\'' +
+                ", price=" + price +
+                '}';
     }
 
     @Override
