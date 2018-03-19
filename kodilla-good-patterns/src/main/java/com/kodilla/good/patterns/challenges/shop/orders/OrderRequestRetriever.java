@@ -19,7 +19,10 @@ public class OrderRequestRetriever {
         basket.add(product2);
         basket.add(product3);
 
-        double value = retrieve().basketValue;
+        double value = basket.stream()
+                .map(s -> s.getPrice())
+                .reduce(((s, s1) -> s + s1))
+                .get();
 
         return new OrderRequest(user, basket, value);
     }

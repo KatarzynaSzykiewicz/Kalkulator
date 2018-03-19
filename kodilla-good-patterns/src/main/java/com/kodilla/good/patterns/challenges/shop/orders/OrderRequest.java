@@ -9,10 +9,7 @@ public class OrderRequest {
     public User user;
     public HashSet<Products> basket;
 
-    public double basketValue = basket.stream()
-            .map(s -> s.getPrice())
-            .reduce(((s, s1) -> s + s1))
-            .get();
+    public double basketValue;
 
     public User getUser() {
         return user;
