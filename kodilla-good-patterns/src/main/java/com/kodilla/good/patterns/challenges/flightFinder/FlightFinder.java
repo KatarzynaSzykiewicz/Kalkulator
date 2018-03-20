@@ -32,7 +32,7 @@ public class FlightFinder {
         List<Flight> common = new ArrayList<>(allFlightsFromACity);
         common.retainAll(allFlightsToACity);
 
-        System.out.println("You can reach " + cityTo + ", from " + cityFrom + ", on " + dateOfDeparture + ", flying through: " + common );
+        System.out.println("You can reach " + cityTo + ", from " + cityFrom + ", on " + dateOfDeparture + ", flying through: " + common);
     }
 
 
