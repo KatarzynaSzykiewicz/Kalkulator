@@ -6,22 +6,32 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
 
-import java.util.List;
-
 @Configuration
 public class BoardConfig {
     @Autowired
-    @Qualifier("taskList1")
-    TaskList taskList;
+    @Qualifier("ToDoList")
+    TaskList tasks;
 
     @Bean
     public Board getBoard() {
-        return new Board(taskList);
+        return new Board(getToDoList(), getInProgressList(), getDoneList());
     }
 
-    @Bean(name = "taskList1")
+    @Bean(name = "ToDoList")
     @Scope("prototype")
-    public TaskList getTaskListOne() {
-        return new TaskList(List<String>"To-Do List1");
+    public TaskList getToDoList() {
+        return new TaskList(getToDoList().getTasks());
+    }
+
+    @Bean(name = "InProgresList")
+    @Scope("prototype")
+    public TaskList getInProgressList() {
+        return new TaskList(getInProgressList().getTasks());
+    }
+
+    @Bean(name = "DoneList")
+    @Scope("prototype")
+    public TaskList getDoneList() {
+        return new TaskList((getDoneList().getTasks()));
     }
 }
