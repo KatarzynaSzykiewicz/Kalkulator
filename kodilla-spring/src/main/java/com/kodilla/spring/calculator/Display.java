@@ -3,10 +3,9 @@ package com.kodilla.spring.calculator;
 import org.springframework.stereotype.Component;
 
 @Component
-public class Display {
+public final class Display {
 
-    public double displayValue(double val) {
-
-        return val;
+    public void displayValue(double val) {
+        System.out.println("The result is: " + val);
     }
 }
