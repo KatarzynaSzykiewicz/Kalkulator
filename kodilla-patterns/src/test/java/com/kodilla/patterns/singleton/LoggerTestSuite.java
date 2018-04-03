@@ -6,15 +6,12 @@ import org.junit.Test;
 
 public class LoggerTestSuite {
 
-    private static Logger logger;
-
     @Test
     public void testGetLastLog() {
         //Given
-        logger = new Logger();
-        logger.log("abd");
+        Logger.getInstance().log("abd");
         //When
-        String lastLog = logger.getLastLog();
+        String lastLog = Logger.getInstance().getLastLog();
         //Then
         Assert.assertEquals("abd", lastLog);
     }
