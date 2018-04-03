@@ -10,7 +10,8 @@ public final class Board {
         this.inProgressList = inProgressList;
         this.doneList = doneList;
     }
-public void boardContent() {
+
+    public void boardContent() {
         System.out.println("The board contains: " + toDoList.getTasks() + inProgressList.getTasks() + doneList.getTasks());
-}
+    }
 }

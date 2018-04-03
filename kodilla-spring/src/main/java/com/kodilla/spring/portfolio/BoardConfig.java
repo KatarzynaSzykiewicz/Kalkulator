@@ -6,32 +6,32 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 @Configuration
 public class BoardConfig {
     @Autowired
     @Qualifier("ToDoList")
     TaskList tasks;
 
-    @Bean
-    public Board getBoard() {
-        return new Board(getToDoList(), getInProgressList(), getDoneList());
-    }
-
     @Bean(name = "ToDoList")
     @Scope("prototype")
     public TaskList getToDoList() {
-        return new TaskList(getToDoList().getTasks());
+        return new TaskList(Collections.singletonList("To-do list no.1"));
     }
+
 
     @Bean(name = "InProgresList")
     @Scope("prototype")
     public TaskList getInProgressList() {
-        return new TaskList(getInProgressList().getTasks());
+        return new TaskList(Collections.singletonList("In-progress list no.1"));
     }
 
     @Bean(name = "DoneList")
     @Scope("prototype")
     public TaskList getDoneList() {
-        return new TaskList((getDoneList().getTasks()));
+        return new TaskList(Collections.singletonList("Done list no.1"));
     }
 }
