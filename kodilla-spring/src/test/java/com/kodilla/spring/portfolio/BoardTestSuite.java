@@ -42,6 +42,6 @@ public class BoardTestSuite {
         //When
         int result = taskList.getTasks().size();
         //Then
-        Assert.assertEquals(1, result);
+        Assert.assertEquals(2, result);
     }
 }
