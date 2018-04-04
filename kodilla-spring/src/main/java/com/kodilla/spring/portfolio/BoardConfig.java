@@ -12,7 +12,7 @@ import java.util.List;
 public class BoardConfig {
 
     @Bean(name = "ToDoList")
-    @Scope("singleton")
+    @Scope("prototype")
     public TaskList getToDoList() {
         List<String> strings = new ArrayList<>();
         strings.add("To-do list no.1");
