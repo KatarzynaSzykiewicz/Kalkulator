@@ -14,10 +14,12 @@ public class BoardTestSuite {
     public void testBoard() {
         //Given
         ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring.portfolio");
-        Board board = context.getBean(Board.class);
+
         //When
+        Board board = context.getBean(Board.class);
+
         //Then
-        board.boardContent();
+        Assert.assertNotNull(board);
     }
 
     @Test
@@ -42,6 +44,6 @@ public class BoardTestSuite {
         //When
         int result = taskList.getTasks().size();
         //Then
-        Assert.assertEquals(1, result);
+        Assert.assertEquals(2, result);
     }
 }
