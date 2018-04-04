@@ -23,7 +23,7 @@ public class BoardConfig {
     }
 
 
-    @Bean(name = "InProgresList")
+    @Bean(name = "InProgressList")
     @Scope("prototype")
     public TaskList getInProgressList() {
         return new TaskList(Collections.singletonList("In-progress list no.1"));

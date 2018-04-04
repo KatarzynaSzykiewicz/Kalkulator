@@ -12,7 +12,7 @@ public class BoardTestSuite {
     @Test
     public void testBoard() {
         //Given
-        ApplicationContext context = new AnnotationConfigApplicationContext(BoardConfig.class);
+        ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring.portfolio");
         Board board = context.getBean(Board.class);
         //When
         //Then
@@ -37,10 +37,12 @@ public class BoardTestSuite {
         //Given
         ApplicationContext context =
                 new AnnotationConfigApplicationContext("com.kodilla.spring.portfolio");
-        Board board = (Board) context.getBean("ToDoList");
-        board.toDoList.getTasks().add("To-do task no.1");
+        TaskList taskList = (TaskList)context.getBean("ToDoList");
+        taskList.getTasks().add("To-do task no.1");
+//        Board board = (Board) context.getBean("ToDoList");
+//        board.toDoList.getTasks().add("To-do task no.1");
         //When
-        int result = board.toDoList.getTasks().size();
+        int result = taskList.getTasks().size();
         //Then
         Assert.assertEquals(1, result);
     }
