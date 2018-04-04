@@ -24,7 +24,6 @@ public class BoardTestSuite {
         //Given
         ApplicationContext context =
                 new AnnotationConfigApplicationContext("com.kodilla.spring.portfolio");
-
         //When & Then
         System.out.println("===== Beans list: ==== >>");
         Arrays.stream(context.getBeanDefinitionNames())
@@ -37,10 +36,8 @@ public class BoardTestSuite {
         //Given
         ApplicationContext context =
                 new AnnotationConfigApplicationContext("com.kodilla.spring.portfolio");
-        TaskList taskList = (TaskList)context.getBean("ToDoList");
+        TaskList taskList = (TaskList) context.getBean("ToDoList");
         taskList.getTasks().add("To-do task no.1");
-//        Board board = (Board) context.getBean("ToDoList");
-//        board.toDoList.getTasks().add("To-do task no.1");
         //When
         int result = taskList.getTasks().size();
         //Then
